@@ -87,6 +87,60 @@
             color: darkgreen;
             background-color: cadetblue;
         }
+        .player{
+            color: rgb(7, 71, 71);
+            font-size: large;
+            font-weight: bold;
+            position: relative;
+            left: 20px;
+            top: -20px;
+        }
+        .container{
+            width: 800px;
+            height: 650px;
+            background-color: burlywood;
+            position: relative;
+            left: 300px;
+            border: rgb(70, 4, 4) solid 4px;
+        }
+        .pieChart{
+            width: 300px;
+            height: 300px;
+            background: conic-gradient(
+                blue 0 91.8%,
+                red 91.8% 100%
+            );
+            position: relative;
+            border-radius: 50%;
+            top: 150px;
+            left: 100px;
+        }
+        .littleBox1{
+            width: 20px;
+            height: 20px;
+            color: black;
+            font-size: 20px;
+            background-color: blue;
+            position: relative;
+            top: -200px;
+            left: 600px;
+            border: solid black 2px;
+        }
+        .written{
+            left: 30px;
+            position: relative;
+        }
+        .littleBox2{
+            width: 20px;
+            height: 20px;
+            color: black;
+            font-size: 20px;
+            background-color: red;
+            position: relative;
+            top: -50px;
+            left: 600px;
+            border: solid black 2px;
+        }
     </style>
 </head>
 <body>
@@ -125,20 +179,20 @@
     </table>
     <h2>Quiz</h2>
     <h3>1. When was Muhammad Ali born?</h3>
-    <input type="radio" name="Question1"  id="correct1">17th January, 1942<br>
-    <input type="radio" name="Question1" >18th August, 1938<br>
-    <input type="radio" name="Question1" >31st March, 1955<br>
-    <input type="radio" name="Question1" >21st September, 1985<br>
+    <input type="radio" name="Question1"  id="correct1"><div class="written">17th January, 1942</div><br>
+    <input type="radio" name="Question1" ><div class="written">18th August, 1938</div><br>
+    <input type="radio" name="Question1" ><div class="written">31st March, 1955</div><br>
+    <input type="radio" name="Question1" ><div class="written">21st September, 1985</div><br>
     <h3>2. When did Mummad Ali died?</h3>
-    <input type="radio" name="Question2" id="correct2">3rd June, 2016<br>
-    <input type="radio" name="Question2" >15th, October 2008<br>
-    <input type="radio" name="Question2" >19th January, 2020<br>
-    <input type="radio" name="Question2" >1st July, 2015c<br>
+    <input type="radio" name="Question2" id="correct2"><div class="written">3rd June, 2016</div><br>
+    <input type="radio" name="Question2" ><div class="written">15th, October 2008</div><br>
+    <input type="radio" name="Question2" ><div class="written">19th January, 2020</div><br>
+    <input type="radio" name="Question2" ><div class="written">1st July, 2015</div><br>
     <h3>3. What is Muhammad Ali's nickname?</h3>
-    <input type="radio" name="Question3" >The Undertaker<br>
-    <input type="radio" name="Question3" >The Great Khali<br>
-    <input type="radio" name="Question3" id="correct3">The Greatest<br>
-    <input type="radio" name="Question3" >The Furious<br><br>
+    <input type="radio" name="Question3" ><div class="written">The Undertaker</div><br>
+    <input type="radio" name="Question3" ><div class="written">The Great Khali</div><br>
+    <input type="radio" name="Question3" id="correct3"><div class="written">The Greatest</div><br>
+    <input type="radio" name="Question3" ><div class="written">The Furious</div><br><br>
     <input type="submit" name="submit" value="Submit" onclick="result()"><br><br><br>
     <script type="text/javascript">
         function result(){
@@ -158,6 +212,13 @@
             alert("Your Score is="+score+"/3");   
         }
     </script>
+    <h2>Winning Percentage of Usain Bolt</h2>
+    <div class="container">
+        <div class="pieChart"></div>
+        <div class="littleBox1"><p class="written">Winning Percentage</p></div>
+        <div class="littleBox2"><p class="written">Losing Percentage</p></div>
+    </div>
+    <br><br>
     <a href="../index.html">Back</a>
 </body>
 </html>
