@@ -87,6 +87,60 @@
             color: darkgreen;
             background-color: cadetblue;
         }
+        .player{
+            color: rgb(7, 71, 71);
+            font-size: large;
+            font-weight: bold;
+            position: relative;
+            left: 20px;
+            top: -20px;
+        }
+        .container{
+            width: 800px;
+            height: 650px;
+            background-color: burlywood;
+            position: relative;
+            left: 300px;
+            border: rgb(70, 4, 4) solid 4px;
+        }
+        .pieChart{
+            width: 300px;
+            height: 300px;
+            background: conic-gradient(
+                blue 0 65.9%,
+                red 65.9% 100%
+            );
+            position: relative;
+            border-radius: 50%;
+            top: 150px;
+            left: 100px;
+        }
+        .littleBox1{
+            width: 20px;
+            height: 20px;
+            color: black;
+            font-size: 20px;
+            background-color: blue;
+            position: relative;
+            top: -200px;
+            left: 600px;
+            border: solid black 2px;
+        }
+        .written{
+            left: 30px;
+            position: relative;
+        }
+        .littleBox2{
+            width: 20px;
+            height: 20px;
+            color: black;
+            font-size: 20px;
+            background-color: red;
+            position: relative;
+            top: -50px;
+            left: 600px;
+            border: solid black 2px;
+        }
     </style>
 </head>
 <body>
@@ -131,20 +185,20 @@
     </table>
     <h2>Quiz</h2>
     <h3>1. When was Michael Jordan born?</h3>
-    <input type="radio" name="Question1" >21st August, 1967<br>
-    <input type="radio" name="Question1" >17th December, 1965<br>
-    <input type="radio" name="Question1" >31st July, 1955<br>
-    <input type="radio" name="Question1" id="correct1">17th February, 1963<br>
+    <input type="radio" name="Question1" ><div class="written">21st August, 1967</div><br>
+    <input type="radio" name="Question1" ><div class="written">17th December, 1965</div><br>
+    <input type="radio" name="Question1" ><div class="written">31st July, 1955</div><br>
+    <input type="radio" name="Question1" id="correct1"><div class="written">17th February, 1963</div><br>
     <h3>2. What is the highest points scored in a season by Michael Jordan?</h3>
-    <input type="radio" name="Question2" >39.9<br>
-    <input type="radio" name="Question2" >37.1<br>
-    <input type="radio" name="Question2" id="correct2">40.4<br>
-    <input type="radio" name="Question2" >38.3<br>
+    <input type="radio" name="Question2" ><div class="written">39.9</div><br>
+    <input type="radio" name="Question2" ><div class="written">37.1</div><br>
+    <input type="radio" name="Question2" id="correct2"><div class="written">40.4</div><br>
+    <input type="radio" name="Question2" ><div class="written">38.3</div><br>
     <h3>3. What was the points scored by Michael Jordan in the 6 game 1993 NBA Finals?</h3>
-    <input type="radio" name="Question3" id="correct3">246<br>
-    <input type="radio" name="Question3" >238<br>
-    <input type="radio" name="Question3" >251<br>
-    <input type="radio" name="Question3" >247<br><br>
+    <input type="radio" name="Question3" id="correct3"><div class="written">246</div><br>
+    <input type="radio" name="Question3" ><div class="written">238</div><br>
+    <input type="radio" name="Question3" ><div class="written">251</div><br>
+    <input type="radio" name="Question3" ><div class="written">247</div><br><br>
     <input type="submit" name="submit" value="Submit" onclick="result()"><br><br><br>
     <script type="text/javascript">
         function result(){
@@ -164,6 +218,13 @@
             alert("Your Score is="+score+"/3");   
         }
     </script>
+    <h2>Winning Percentage of Usain Bolt</h2>
+    <div class="container">
+        <div class="pieChart"></div>
+        <div class="littleBox1"><p class="written">Winning Percentage</p></div>
+        <div class="littleBox2"><p class="written">Losing Percentage</p></div>
+    </div>
+    <br><br>
     <a href="../index.html">Back</a>
 </body>
 </html>
