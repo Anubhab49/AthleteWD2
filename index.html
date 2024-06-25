@@ -144,6 +144,9 @@
             background-position-x: center;
             height: 100vmin;
             width: 98vmax;
+            height: 100vmin;
+            width: 98.9vmax;
+            margin: 0;
         }
         h1{
             color: blue;
@@ -616,11 +619,101 @@
             bottom: 5px;
             transform: skewY(45deg);
         }
+        .navbar {
+            display: flex;
+            height: 70px;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(14, 79, 79);
+            padding: 10px;
+            color: white;
+        }
+
+        .navbar-home .home-link {
+            text-decoration: none;
+            color: white;
+            background-color: rgb(14, 79, 79);
+            font-size: 40px;
+            font-weight: 600;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            transition: color 1.5s;
+            transition: background-color 0.75s;
+        }
+        .navbar-home .home-link:hover{
+            background-color: #00a2ff;
+            color: rgb(67, 35, 97);
+        }
+        .home-icon {
+            display: none;
+        }
+        .home-icon:hover{
+            background-color: #00a2ff;
+            color: rgb(67, 35, 97);
+        }
+        .navbar-links a {
+            margin: 0 10px;
+            padding: 10px;
+            background-color: rgb(14, 79, 79);
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 400;
+            gap: 8vw;
+            color: white;
+            transition: color 0.8s;
+            transition: background-color 0.4s;
+        }
+
+        .navbar-links a:hover,
+        .navbar-links a:active {
+            background-color: #00a2ff;
+            color: rgb(61, 55, 184);
+        }
+
+        .navbar-menu-icon {
+            display: none;
+            font-size: 8vw;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .navbar-menu-icon:hover,
+        .navbar-menu-icon:active {
+            color: #00a2ff;
+        }
+
+        .dropdown-menu {
+            display: none;
+            flex-direction: column;
+            background-color: rgb(14, 79, 79);
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            padding: 10px;
+        }
+
+        .dropdown-menu a {
+            margin: 5px 0;
+            text-decoration: none;
+            color: white;
+            background-color: rgb(14, 79, 79);
+            transition: color 0.8s;
+            transition: background-color 0.4s;
+        }
+
+        .dropdown-menu a:hover,
+        .dropdown-menu a:active {
+            color: #00a2ff;
+            background-color: rgb(61, 55, 184);
+        }
         @media (max-width:600px){
             body{
                 background-image: url('Pictures/bgimg3.jpg');
+                background-size: 100vmax;
                 height: 100vmin;
-                width: 95vw;
+                width: 100vw;
+                margin: 0;
             }
             img{
                 background-color: yellow;
@@ -635,7 +728,7 @@
                 font-size: 20px;
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
                 text-align: center;
-                width: 85vw;
+                width: 90vw;
                 background: linear-gradient(
                     135deg, #ff00d2,rgb(19, 204, 19), #fed90f,rgb(221, 112, 221), #00a2ff, #09f1b8, #ff00d2,rgb(19, 204, 19), #fed90f,rgb(221, 112, 221), #00a2ff, #09f1b8
                 );
@@ -1086,10 +1179,66 @@
                 bottom: 1.111px;
                 transform: skewY(45deg);
             }
+            .navbar{
+                height: 40px;
+            }
+            .navbar-links {
+                display: none;
+                background-color: rgb(14, 79, 79);
+            }
+
+            .navbar-menu-icon {
+                display: block;
+            }
+
+            .home-link span {
+                display: none;
+            }
+            .dropdown-menu{
+                background-color: rgb(14, 79, 79);
+            }
+            
+            .home-icon {
+                display: flex;
+                font-size: 8vw;
+                background: none;
+            }
         }
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="navbar-home">
+            <a href="/html folders/index.html" class="home-link"><i class="home-icon">🏠</i><span>HOME</span></a>
+        </div>
+        <div class="navbar-links">
+            <a href="Athlete/bolt.html">Bolt</a>
+            <a href="Athlete/cr7.html">CR7</a>
+            <a href="Athlete/lm10.html">LM10</a>
+            <a href="Athlete/phelps.html">Phelps</a>
+            <a href="Athlete/jordan.html">Jordan</a>
+            <a href="Athlete/mdali.html">Md. Ali</a>
+            <a href="Athlete/roger.html">Roger</a>
+            <a href="Athlete/woods.html">Woods</a>
+            <a href="Athlete/sania.html">Sania</a>
+            <a href="Athlete/yuvi.html">Yuvi</a>
+        </div>
+        <div class="navbar-menu-icon" id="menu-icon">
+            ☰
+        </div>
+    </nav>
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="Athlete/bolt.html">Bolt</a>
+        <a href="Athlete/cr7.html">CR7</a>
+        <a href="Athlete/lm10.html">LM10</a>
+        <a href="Athlete/phelps.html">Phelps</a>
+        <a href="Athlete/jordan.html">Jordan</a>
+        <a href="Athlete/mdali.html">Md. Ali</a>
+        <a href="Athlete/roger.html">Roger</a>
+        <a href="Athlete/woods.html">Woods</a>
+        <a href="Athlete/sania.html">Sania</a>
+        <a href="Athlete/yuvi.html">Yuvi</a>
+    </div>
     <h1>My Top 10 Favourite Athletes</h1>
     <hr>
     <h2>1. Usain Bolt</h2>
@@ -1179,5 +1328,25 @@
     </div>
     <br>
     <hr>
+    <script>
+        document.getElementById('menu-icon').addEventListener('click', function(event) {
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            if (dropdownMenu.style.display === 'flex') {
+                dropdownMenu.style.display = 'none';
+            } else {
+                dropdownMenu.style.display = 'flex';
+            }
+            event.stopPropagation(); // Prevent the click from bubbling up to the document
+        });
+
+        document.addEventListener('click', function(event) {
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            
+            if (dropdownMenu.style.display === 'flex' && !dropdownMenu.contains(event.target) && !menuIcon.contains(event.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
