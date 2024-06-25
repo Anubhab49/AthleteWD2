@@ -11,7 +11,8 @@
             background-repeat: repeat-y;
             background-position-x: center;
             height: 100vmin;
-            width: 97vmax;
+            width: 98.9vmax;
+            margin: 0;
         }
         h1{
             font-size: 75px;
@@ -213,17 +214,113 @@
             left: 600px;
             border: solid black 2px;
         }
+        .navbar {
+            display: flex;
+            margin-top: 0px;
+            height: 70px;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(14, 79, 79);
+            padding: 10px;
+            border: none;
+            color: white;
+        }
+
+        .navbar-home .home-link {
+            text-decoration: none;
+            color: white;
+            border: none;
+            background-color: rgb(14, 79, 79);
+            font-size: 40px;
+            font-weight: 600;
+            padding: 10px;
+            margin-left: 0px;
+            display: flex;
+            align-items: center;
+            transition: color 1.5s;
+            transition: background-color 0.75s;
+        }
+        .navbar-home .home-link:hover{
+            background-color: #00a2ff;
+            color: rgb(67, 35, 97);
+        }
+        .home-icon {
+            display: none;
+        }
+        .home-icon:hover{
+            background-color: #00a2ff;
+            color: rgb(67, 35, 97);
+        }
+        .navbar-links a {
+            margin: 0 10px;
+            padding: 10px;
+            border: none;
+            background-color: rgb(14, 79, 79);
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 400;
+            gap: 8vw;
+            color: white;
+            transition: color 0.8s;
+            transition: background-color 0.4s;
+        }
+
+        .navbar-links a:hover,
+        .navbar-links a:active {
+            background-color: #00a2ff;
+            color: rgb(61, 55, 184);
+        }
+
+        .navbar-menu-icon {
+            display: none;
+            font-size: 8vw;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .navbar-menu-icon:hover,
+        .navbar-menu-icon:active {
+            color: #00a2ff;
+        }
+
+        .dropdown-menu {
+            display: none;
+            flex-direction: column;
+            background-color: rgb(14, 79, 79);
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            padding: 10px;
+        }
+
+        .dropdown-menu a {
+            margin: 5px 0;
+            text-decoration: none;
+            color: white;
+            border: none;
+            background-color: rgb(14, 79, 79);
+            transition: color 0.8s;
+            transition: background-color 0.4s;
+        }
+
+        .dropdown-menu a:hover,
+        .dropdown-menu a:active {
+            color: #00a2ff;
+            background-color: rgb(61, 55, 184);
+        }
         @media (max-width:600px){
             body{
                 background-image: url('../Pictures/bgimg6.jpg');
                 background-size: cover;
                 background-repeat: repeat-y;
                 background-position-x: center;
+                background-size: 100vmax;
                 height: 100vmin;
-                width: 98vw;
+                width: 96vw;
+                margin: 0;
             }
             h1{
-                width: 89vw;
+                width: 96vw;
                 font-size: 20px;
                 padding: 3px;
                 border: rgba(110, 24, 24, 0.521) solid 5px;
@@ -274,7 +371,7 @@
                 right: -350px;
             }
             h2{
-                width: 85vw;
+                width: 96vw;
                 font-size: 18px;
                 border: indigo solid 5px;
                 padding: 3px;
@@ -353,10 +450,67 @@
                 font-size: 15px;
                 align-self: center;
             }
+            .navbar{
+                height: 65px;
+                width: 96vw;
+            }
+            .navbar-links {
+                display: none;
+                background-color: rgb(14, 79, 79);
+            }
+
+            .navbar-menu-icon {
+                display: block;
+            }
+
+            .home-link span {
+                display: none;
+            }
+            .dropdown-menu{
+                background-color: rgb(14, 79, 79);
+            }
+            
+            .home-icon {
+                display: flex;
+                font-size: 8vw;
+                background: none;
+            }
         }
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="navbar-home">
+            <a href="../index.html" class="home-link"><i class="home-icon">🏠</i><span>HOME</span></a>
+        </div>
+        <div class="navbar-links">
+            <a href="bolt.html">Bolt</a>
+            <a href="cr7.html">CR7</a>
+            <a href="lm10.html">LM10</a>
+            <a href="phelps.html">Phelps</a>
+            <a href="jordan.html">Jordan</a>
+            <a href="mdali.html">Md. Ali</a>
+            <a href="roger.html">Roger</a>
+            <a href=woods.html">Woods</a>
+            <a href=sania.html">Sania</a>
+            <a href="yuvi.html">Yuvi</a>
+        </div>
+        <div class="navbar-menu-icon" id="menu-icon">
+            ☰
+        </div>
+    </nav>
+    <div class="dropdown-menu" id="dropdown-menu">
+        <a href="bolt.html">Bolt</a>
+        <a href="cr7.html">CR7</a>
+        <a href="lm10.html">LM10</a>
+        <a href="phelps.html">Phelps</a>
+        <a href="jordan.html">Jordan</a>
+        <a href="mdali.html">Md. Ali</a>
+        <a href=roger.html">Roger</a>
+        <a href="woods.html">Woods</a>
+        <a href="sania.html">Sania</a>
+        <a href="yuvi.html">Yuvi</a>
+    </div>
     <h1>Top 5 Performances of Michael Phelps</h1>
     <table>
         <tr>
@@ -430,6 +584,24 @@
             }
             alert("Your Score is="+score+"/3");   
         }
+        document.getElementById('menu-icon').addEventListener('click', function(event) {
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            if (dropdownMenu.style.display === 'flex') {
+                dropdownMenu.style.display = 'none';
+            } else {
+                dropdownMenu.style.display = 'flex';
+            }
+            event.stopPropagation(); // Prevent the click from bubbling up to the document
+        });
+
+        document.addEventListener('click', function(event) {
+            const dropdownMenu = document.getElementById('dropdown-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            
+            if (dropdownMenu.style.display === 'flex' && !dropdownMenu.contains(event.target) && !menuIcon.contains(event.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
     </script>
     <h2>Winning Percentage of Michael Jordan</h2>
     <div class="container">
