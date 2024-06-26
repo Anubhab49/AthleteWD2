@@ -321,6 +321,22 @@
             color: #00a2ff;
             background-color: rgb(61, 55, 184);
         }
+        #audioToggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #3ba93f;
+            color: rgb(53, 36, 181);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        #audioToggle:hover{
+            background-color: #0b610e;
+            color: rgb(178, 234, 234);
+        }
         @media (max-width:600px){
             body{
                 background-image: url('../Pictures/bgimg6.jpg');
@@ -488,6 +504,12 @@
                 font-size: 8vw;
                 background: none;
             }
+            #audioToggle {
+                padding: 15px;
+                font-size: 12px;
+                bottom: 10px;
+                right: 10px;
+            }
         }
     </style>
 </head>
@@ -524,6 +546,11 @@
         <a href="sania.html">Sania</a>
         <a href="yuvi.html">Yuvi</a>
     </div>
+    <audio id="myAudio" loop>
+      <source src="../Music/Mortals.mp4" type="audio/mp4">
+      <source src="../Music/Mortals.mp4" type="audio/mp4">
+    </audio>
+    <button id="audioToggle" onclick="toggleAudio()">Play</button>
     <h1>Top 5 Performances of Cristiano Ronaldo</h1>
     <table>
         <tr>
@@ -621,6 +648,18 @@
                 dropdownMenu.style.display = 'none';
             }
         });
+        var audio = document.getElementById('myAudio');
+        var button = document.getElementById('audioToggle');
+    
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                button.textContent = 'Pause';
+            } else {
+                audio.pause();
+                button.textContent = 'Play';
+            }
+        }
     </script>
     <h2>Winning Percentage of Cristiano Ronaldo</h2>
     <div class="container">
