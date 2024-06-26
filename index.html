@@ -708,6 +708,22 @@
             color: #00a2ff;
             background-color: rgb(61, 55, 184);
         }
+        #audioToggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #3ba93f;
+            color: rgb(53, 36, 181);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        #audioToggle:hover{
+            background-color: #0b610e;
+            color: rgb(178, 234, 234);
+        }
         @media (max-width:600px){
             body{
                 background-image: url('Pictures/bgimg3.jpg');
@@ -1205,6 +1221,12 @@
                 font-size: 8vw;
                 background: none;
             }
+            #audioToggle {
+                padding: 15px;
+                font-size: 12px;
+                bottom: 10px;
+                right: 10px;
+            }
         }
     </style>
 </head>
@@ -1241,6 +1263,11 @@
         <a href="Athlete/sania.html">Sania</a>
         <a href="Athlete/yuvi.html">Yuvi</a>
     </div>
+    <audio id="myAudio" loop>
+      <source src="D:\html folders\Music\Mortals.mp4" type="audio/mp4">
+      <source src="D:\html folders\Music\Mortals.mp4" type="audio/mp4">
+    </audio>
+    <button id="audioToggle" onclick="toggleAudio()">Play</button>
     <h1>My Top 10 Favourite Athletes</h1>
     <hr>
     <h2>1. Usain Bolt</h2>
@@ -1349,6 +1376,18 @@
                 dropdownMenu.style.display = 'none';
             }
         });
+        var audio = document.getElementById('myAudio');
+        var button = document.getElementById('audioToggle');
+    
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                button.textContent = 'Pause';
+            } else {
+                audio.pause();
+                button.textContent = 'Play';
+            }
+        }
     </script>
 </body>
 </html>
